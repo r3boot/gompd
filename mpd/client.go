@@ -767,3 +767,8 @@ func (c *Client) StickerList(uri string) ([]Sticker, error) {
 func (c *Client) StickerSet(uri string, name string, value string) error {
 	return c.Command("sticker set song %s %s %s", uri, name, value).OK()
 }
+
+// Prio sets the priority for a track in the playlist
+func (c *Client) PrioId(id, prio int) error {
+	return c.Command("prioid %d %d", prio, id).OK()
+}
